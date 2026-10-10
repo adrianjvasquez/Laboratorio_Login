@@ -1,0 +1,177 @@
+:root {
+  --bg: #0f1420;
+  --panel: #1a2234;
+  --panel-2: #222c42;
+  --borde: #2e3a54;
+  --texto: #e6ebf5;
+  --tenue: #9aa7c0;
+  --acento: #4f8cff;
+  --acento-2: #6ee7b7;
+  --peligro: #ff6b6b;
+  --exito: #34d399;
+  --radio: 14px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(1200px 600px at 80% -10%, #1b2740, var(--bg));
+  color: var(--texto);
+  line-height: 1.55;
+}
+
+code { color: var(--acento-2); background: rgba(110,231,183,.08); padding: 1px 5px; border-radius: 5px; font-size: .92em; }
+
+/* ---------------- LOGIN ---------------- */
+.login-pantalla {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.login-tarjeta {
+  width: 100%;
+  max-width: 380px;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 32px 28px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.login-escudo { font-size: 42px; text-align: center; }
+.login-tarjeta h1 { margin: 0; text-align: center; font-size: 1.4rem; }
+.login-sub { margin: 0 0 6px; text-align: center; color: var(--tenue); font-size: .9rem; }
+.login-tarjeta label { display: flex; flex-direction: column; gap: 6px; font-size: .85rem; color: var(--tenue); }
+.login-tarjeta input {
+  width: 100%;
+  padding: 11px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  color: var(--texto);
+  font-size: .95rem;
+}
+.login-tarjeta input:focus { outline: none; border-color: var(--acento); }
+.campo-clave { position: relative; }
+.campo-clave input { padding-right: 42px; }
+.ver-clave {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; font-size: 1.1rem; padding: 4px;
+}
+.login-error {
+  background: rgba(255,107,107,.12);
+  border: 1px solid rgba(255,107,107,.4);
+  color: #ffb4b4; padding: 9px 12px; border-radius: 9px; font-size: .85rem;
+}
+.btn-entrar {
+  margin-top: 4px; padding: 12px; border: none; border-radius: 9px;
+  background: var(--acento); color: #fff; font-weight: 600; font-size: .95rem; cursor: pointer;
+}
+.btn-entrar:hover { background: #3f7bef; }
+.login-pista {
+  margin-top: 6px; padding: 12px; border: 1px dashed var(--borde); border-radius: 9px;
+  display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--tenue);
+}
+
+/* ---------------- TEORÍA ---------------- */
+.barra-superior {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px; border-bottom: 1px solid var(--borde);
+  background: rgba(16,22,36,.8); position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 10;
+}
+.btn-salir {
+  background: var(--panel-2); border: 1px solid var(--borde); color: var(--texto);
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: .85rem;
+}
+.btn-salir:hover { border-color: var(--acento); }
+
+.contenido { max-width: 920px; margin: 0 auto; padding: 32px 24px 60px; }
+.intro h1 { font-size: 1.8rem; margin: 0 0 10px; }
+.intro > p { color: var(--tenue); max-width: 70ch; }
+
+.fundamentos { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 14px; margin: 20px 0 10px; }
+.fundamento { background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); padding: 16px; }
+.fundamento h3 { margin: 0 0 8px; font-size: 1rem; color: var(--acento-2); }
+.fundamento p { margin: 0; font-size: .88rem; color: var(--tenue); }
+
+.ataques { margin-top: 42px; }
+.ataques h2 { font-size: 1.4rem; }
+.aviso {
+  background: rgba(79,140,255,.1); border: 1px solid rgba(79,140,255,.35);
+  padding: 12px 14px; border-radius: 10px; font-size: .85rem; color: #cfe0ff;
+}
+
+.pestanas { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.pestana {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--panel); border: 1px solid var(--borde); color: var(--tenue);
+  padding: 9px 13px; border-radius: 999px; cursor: pointer; font-size: .85rem;
+}
+.pestana:hover { color: var(--texto); }
+.pestana.activa { background: var(--acento); border-color: var(--acento); color: #fff; }
+.pestana-icono { font-size: 1rem; }
+
+.ficha-ataque { background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); padding: 24px; }
+.ficha-ataque h3 { margin: 0 0 6px; font-size: 1.3rem; }
+.resumen { color: var(--tenue); margin: 0 0 20px; font-style: italic; }
+
+.bloque { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--borde); }
+.bloque h4 { margin: 0 0 10px; font-size: 1rem; }
+.bloque p { margin: 0; color: #cfd6e6; font-size: .92rem; }
+.bloque-prevencion ul { margin: 0; padding-left: 20px; }
+.bloque-prevencion li { margin-bottom: 7px; color: #cfd6e6; font-size: .92rem; }
+.bloque-prevencion { border-left: 3px solid var(--exito); padding-left: 16px; border-radius: 0 8px 8px 0; background: rgba(52,211,153,.05); }
+
+/* ---------------- SIMULADOR ---------------- */
+.sim { background: var(--panel-2); border: 1px solid var(--borde); border-radius: 12px; padding: 16px; }
+.sim-desc { margin: 0 0 14px; font-size: .88rem; color: var(--tenue); }
+.sim-controles { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.btn-sim { background: var(--acento); border: none; color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: .85rem; font-weight: 600; }
+.btn-sim.secundario { background: transparent; border: 1px solid var(--borde); color: var(--tenue); }
+.estado { font-size: .85rem; font-weight: 600; }
+.estado-exito { color: var(--exito); }
+
+.pantalla {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: #0d1220; border: 1px solid var(--borde); border-radius: 10px; padding: 18px; margin-bottom: 12px;
+}
+.pantalla .etiqueta { font-size: .75rem; color: var(--tenue); text-transform: uppercase; letter-spacing: 1px; }
+.pantalla .valor { font-family: ui-monospace, "Consolas", monospace; font-size: 2.2rem; letter-spacing: 6px; color: var(--acento); }
+.pantalla .valor.ok { color: var(--exito); }
+
+.barra { position: relative; height: 22px; background: #0d1220; border-radius: 999px; overflow: hidden; border: 1px solid var(--borde); }
+.barra-relleno { height: 100%; background: linear-gradient(90deg, var(--acento), var(--acento-2)); transition: width .1s linear; }
+.barra-pct { position: absolute; inset: 0; display: grid; place-items: center; font-size: .72rem; font-weight: 700; }
+
+.lista-intentos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lista-intentos li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 12px; border-radius: 8px; background: #0d1220; border: 1px solid transparent; font-size: .9rem; color: var(--tenue);
+}
+.lista-intentos li.activo.fallo { border-color: var(--peligro); color: #ffb4b4; }
+.lista-intentos li.activo.ok { border-color: var(--exito); color: var(--exito); background: rgba(52,211,153,.08); }
+.lista-intentos li.descartado { opacity: .4; text-decoration: line-through; }
+
+.rejilla-usuarios { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 8px; }
+.celda-usuario { padding: 12px; text-align: center; border-radius: 9px; background: #0d1220; border: 1px solid var(--borde); font-size: .85rem; transition: all .2s; }
+.celda-usuario.seguro { border-color: var(--exito); opacity: .7; }
+.celda-usuario.vulnerable { border-color: var(--peligro); background: rgba(255,107,107,.12); color: #ffb4b4; font-weight: 600; }
+
+.tabla-rainbow { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.tabla-rainbow th, .tabla-rainbow td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--borde); }
+.tabla-rainbow th { color: var(--tenue); font-weight: 600; font-size: .78rem; text-transform: uppercase; }
+.tabla-rainbow tr.activo { background: rgba(255,107,107,.08); }
+.tabla-rainbow tr.ok { background: rgba(52,211,153,.1); }
+
+.pie { text-align: center; padding: 24px; color: var(--tenue); font-size: .8rem; border-top: 1px solid var(--borde); }
+
+@media (max-width: 560px) {
+  .pantalla .valor { font-size: 1.6rem; letter-spacing: 3px; }
+  .contenido { padding: 20px 16px 40px; }
+}
